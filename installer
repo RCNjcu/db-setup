@@ -6,6 +6,11 @@ Make sure you have the following installed beforehand.
 
 echo -n "Install Raynes script for database import automation?[Y/N]"
 read -r "install"
+echo -n "Does your Mac have the directory /usr/local/bin/?"
+read -r "directory"
+if [ $directory == n ] || [$directory == no ]; then
+	sudo mkdir -P /usr/local/bin
+fi
 if [ $install == y ] || [ $install == yes ]; then
 	mkdir -p ~/raynescripts && cd ~/raynescripts
 curl -L https://raw.githubusercontent.com/RCNjcu/db-setup/main/dbsetup --output dbsetup
