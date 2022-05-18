@@ -7,10 +7,10 @@ Make sure you have the following installed beforehand.
 echo -n "Install Raynes script for database import automation?[Y/N]"
 read -r "install"
 if [ $install == y ] || [ $install == yes ]; then
-	mkdir -p ~/raynescripts
-curl -L LINK TO REPOSITORY FILE
-chmod +x database-setup
-sudo ln -s ~/raynescripts/terminus /usr/local/bin/database-setup
+	mkdir -p ~/raynescripts && cd ~/raynescripts
+curl -L Lhttps://raw.githubusercontent.com/RCNjcu/db-setup/main/dbsetup --output dbsetup
+chmod +x dbsetup
+sudo ln -s ~/raynescripts/dbsetup /usr/local/bin/dbsetup
 else
 	exit
 fi
