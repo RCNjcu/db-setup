@@ -8,7 +8,7 @@ echo -n "Install Raynes script for database import automation?[Y/N]"
 read -r "install"
 if [ $install == y ] || [ $install == yes ]; then
 	mkdir -p ~/raynescripts && cd ~/raynescripts
-curl -L Lhttps://raw.githubusercontent.com/RCNjcu/db-setup/main/dbsetup --output dbsetup
+curl -L https://raw.githubusercontent.com/RCNjcu/db-setup/main/dbsetup --output dbsetup
 chmod +x dbsetup
 sudo ln -s ~/raynescripts/dbsetup /usr/local/bin/dbsetup
 else
