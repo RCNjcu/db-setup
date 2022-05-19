@@ -1,5 +1,0 @@
-#!/bin/bash
-echo RUNNING UPDATE
-cd ~/raynescripts && rm dbsetup
-curl -L https://raw.githubusercontent.com/RCNjcu/db-setup/main/dbsetup --output dbsetup
-echo UPDATE Completed!
