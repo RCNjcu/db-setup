@@ -17,11 +17,11 @@ if [ $setup == y ] || [ $setup == yes ]; then
 			########################################################"
 	echo -n "Database File:"
 	read -r database
-	mv $database $PWD/CurrentDatabase.sql.gz
-	ddev import-db --src=CurrentDatabase.sql.gz
+	mv $database $PWD/currentdb.sql.gz
+	ddev import-db --src=currentdb.sql.gz
 	ddev drush cr
 	ddev drush en stage_file_proxy -y
-	ddev drush config-set stage_file_proxy.settings origin "SITE"
+	ddev drush config-set stage_file_proxy.settings origin "https://www.njcu.edu/"
 	ddev start
 else
 	rm current.sql.gz
@@ -30,6 +30,7 @@ else
 			########################################################"
 	echo -n "Database File:"
 	read -r database
-	mv "$database" "$current_path/current.sql.gz"
+	mv "$database" "$current_path/currentdb.sql.gz"
+	ddev import-db --src=currentdb.sql.gz
 	ddev drush cr
 fi
