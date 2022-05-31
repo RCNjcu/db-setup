@@ -27,7 +27,7 @@ if [ $setup == y ] || [ $setup == yes ]; then
 
 else
 	rm current.sql.gz
-	echo -e "nter name of the file you want to use.\nMake sure the database file is in the same directory\n(It's much easier)"
+	echo -e "Enter name of the file you want to use.\nMake sure the database file is in the same directory\n(It's much easier)"
 	echo -n "Database File:"
 	read -r database
 	mv "$database" "$current_path/currentdb.sql.gz"
